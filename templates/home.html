@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="home.js"></script>
+<link href="homecss.css" type="text/stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Supermercado+One" rel="stylesheet">
+
+
+	<title>EasyBagrut</title>
+</head>
+<body background="{{url_for('static', filename='bookm.jpg')}}">
+
+<br><br><br>
+<style type="text/css">
+   body {background:"bookm.jpg" !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
+
+
+<h1 class="moveit" style="text-align:center;  color:white; font-style:times; font size: 300px">EasyBagrut</h3>
+ <div class='flash container' style="color: white; font-family: times;">
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+
+      {% for message in messages %}
+        <strong> {{ message }} </strong>
+      {% endfor %}
+      <br><br>
+      {% endif %}
+      {% endwith %}
+</div>
+	<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:#DFE2DB;">
+	  <div class="container-fluid" style="background-color:#DFE2DB;">
+	    <div class="navbar-header" style="background-color:#DFE2DB;">
+	     
+	    </div>
+	    <ul class="nav navbar-nav" style="background-color:#DFE2DB;">
+	    <li class="active"><a href="{{url_for('home')}}">Home</a></li>
+	    	<li><a href="{{url_for('math')}}">Math</a></li>
+	    	<li><a href="{{url_for('physics')}}">Physics</a></li>
+	      <li><a href="{{url_for('english')}}">English</a></li>
+	      <li><a href="{{url_for('aboutus')}}">Aboutus</a></li>
+        <li><a href="{{url_for('signup')}}">SignUp</a></li>
+            
+	    </ul>
+	  </div>
+	</nav>
+	<br><br>
+  <div class="box">
+  {% if not logged_in %}
+    <!--  <span onclick="document.getElementById('id01').style.display='none' " class="close" title="Close Modal">x</span> -->
+    <h1 style="color:blue">Log In Here</h1>
+    <form action="{{url_for('login')}}" method="POST">
+  <h4 style="color:white;"> Username</h3><br>
+  <input type="text" name="username" id="username" placeholder="Username" required/>
+  <br>
+  <h4 style="color:white;"> Password</h3><br>
+  <input type="password" name="password" id="password" placeholder="Password" required/>
+  <br><br>
+  <input type="submit" class="button" value="login">
+</form>
+</div>
+{%endif%}
+        
+       
+
+<div class="carousel slide" data-ride="carousel" id="carousel-ex">
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#carousel-ex"></li>
+            <li data-slide-to="1" data-target="#carousel-ex"></li>
+            <li data-slide-to="2" data-target="#carousel-ex"></li>
+            
+            
+        </ol>
+        <div class="carousel-inner" style="max-height: 50%;
+   max-width: 50%;margin: 0 auto;">
+        <div class="active item"><img src="{{url_for('static', filename='book2.jpg')}}">
+        <div class="carousel-caption">
+        <br>
+        <h1>EasyBagrut</h1>
+        <p>No More Problems</p>
+        </div>
+        </div>
+
+    
+        <div class="item"><img src="{{url_for('static', filename='note1.png')}}" class="tales"></div>
+        <div class="item"><img src="{{url_for('static', filename='note2.png')}}" class="tales" class="tales" ></div>
+        <a class="left carousel-control" data-slide="prev" href="#carousel-ex"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a class="right carousel-control" data-slide="next" href="#carousel-ex"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div>
+</body>
+</html>

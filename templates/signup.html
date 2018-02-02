@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>signup</title>
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="home.js"></script>
+<link type="text/css" href="../static/signup.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Supermercado+One" rel="stylesheet">
+</head>
+<body class="try" background="{{url_for('static', filename='learn.png')}}">
+<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:#DFE2DB;">
+	  <div class="container-fluid" style="background-color:#DFE2DB;">
+	    <div class="navbar-header" style="background-color:#DFE2DB;">
+	     
+	    </div>
+	    <ul class="nav navbar-nav" style="background-color:#DFE2DB;">
+	    <li><a href="{{url_for('home')}}">Home</a></li>
+	    	<li><a href="{{url_for('math')}}">Math</a></li>
+	    	<li><a href="{{url_for('physics')}}">Physics</a></li>
+	      <li><a href="{{url_for('english')}}">English</a></li>
+	      <li><a href="{{url_for('aboutus')}}">Aboutus</a></li>
+        <li class="active"><a href="{{url_for('signup')}}">SignUp</a></li>
+            
+	    </ul>
+	  </div>
+	</nav>
+	<br><br><br>
+	<div id="box">
+    <!--  <span onclick="document.getElementById('id01').style.display='none' " class="close" title="Close Modal">x</span> -->
+  <!--  <form action="{{url_for('signup')}}" method="POST"> 
+  <h4 style="color:white;"> Username</h3><br>
+  <input type="text" name="username" id="username" placeholder="Username" required/>
+  <br>
+  <h4 style="color:white;"> Password</h3><br>
+  <input type="password" name="password" id="password" placeholder="Password" required/>
+  <br><br>
+  <input type="submit" class="button" value="signup">
+</form>
+</div>-->
+
+    <h1 style="color:brown">Sign Up Here</h1>
+
+	<form class ="addpost" action="{{url_for('signup')}}" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="Enter Your Username" required/>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                 <input type="password" name="password" id="password" placeholder="Enter Your Password" required/>
+
+            </div>
+            
+                <!-- <p class="help-block">It is recommended to add an image.</p> -->
+            <button class="btn btn-lg postbtn" type="submit">SIGN UP!</button>
+       </form>
+   </div>
+</body>
+</html>
